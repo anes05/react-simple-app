@@ -65,6 +65,8 @@ const ShopList = () => {
             {shop.shopName} - {shop.email}
             <button onClick={() => navigate(`/shop/edit/${shop.id}`)}>Edit</button>
             <button onClick={() => confirmDelete(shop.id)}>Delete</button>
+            <button onClick={() => navigate(`/shop/${shop.id}/product/create`)}>Add Product</button>
+            <button onClick={() => navigate(`/shop/${shop.id}/products`)}>View Products</button>
           </li>
         ))}
       </ul>

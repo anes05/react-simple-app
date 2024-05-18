@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
   const [username, setUsername] = useState('');
@@ -6,6 +7,7 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState('');
   const [numtel, setNumtel] = useState('');
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,6 +29,7 @@ const RegistrationForm = () => {
       setPassword('');
       setNumtel('');
       setError(null);
+      navigate('/login');
     } catch (error) {
       setError(error.message);
     }

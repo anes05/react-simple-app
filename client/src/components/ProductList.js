@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import '../styles/ProductList.css';
 
 const ProductList = () => {
   const { shopId } = useParams();
@@ -35,20 +36,29 @@ const ProductList = () => {
   }
 
   return (
-    <div>
-      <h1>Products for Shop {shopId}</h1>
-      <button onClick={() => navigate(`/shop/${shopId}/product/create`)}>Add Product</button>
-      <ul>
+    <div className="product-list-container">
+      <h1 className="product-list-header">Products for Shop {shopId}</h1>
+      <button className="product-list-button" onClick={() => navigate(`/shop/${shopId}/product/create`)}>
+        Add Product
+      </button>
+      <ul className="product-list-items">
         {products.map(product => (
-          <li key={product.id}>
-            {product.productName} - {product.description} - ${product.price} - {product.quantity}
-            <button onClick={() => navigate(`/shop/${shopId}/product/edit/${product.id}`)}>Edit</button>
-            <button onClick={() => navigate(`/shop/${shopId}/product/delete/${product.id}`)}>Delete</button>
+          <li key={product.id} className="product-list-item">
+            <div className="product-list-item-text">
+              {product.productName} - {product.description} - ${product.price} - {product.quantity}
+            </div>
+            <div className="product-list-item-buttons">
+              <button className="product-list-button product-list-edit-button" onClick={() => navigate(`/shop/${shopId}/product/edit/${product.id}`)}>Edit</button>
+              <button className="product-list-button product-list-delete-button" onClick={() => navigate(`/shop/${shopId}/product/delete/${product.id}`)}>Delete</button>
+            </div>
           </li>
         ))}
       </ul>
     </div>
   );
+
+
+
 };
 
 export default ProductList;

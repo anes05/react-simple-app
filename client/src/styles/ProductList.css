@@ -1,0 +1,96 @@
+/* ProductList.css */
+
+.product-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    background-color: #f4f4f9;
+    color: #333;
+
+}
+
+.product-list-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.product-list-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.product-list-button:hover {
+    background-color: #45a049;
+}
+
+.product-list-item {
+    margin-bottom: 1em;
+}
+
+.product-list-item button {
+    margin-left: 0.5em;
+}
+.product-list-button {
+    /* Styles communs pour tous les boutons */
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.product-list-button:hover {
+    background-color: #45a049;
+}
+
+.product-list-edit-button {
+    /* Styles spécifiques au bouton "Edit" */
+    margin-right: 0.5em;
+}
+
+.product-list-delete-button {
+    /* Styles spécifiques au bouton "Delete" */
+    background-color: #f44336;
+    /* Autres styles au besoin */
+}
+.product-list-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 600px; /* Ajuster selon les besoins */
+}
+
+.product-list-item {
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.product-list-item-text {
+    flex: 1;
+}
+
+.product-list-item-buttons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}

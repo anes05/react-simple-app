@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import '../styles/ProductForm.css';
 
 const ProductForm = () => {
   const { shopId, productId } = useParams();
@@ -57,9 +58,9 @@ const ProductForm = () => {
   };
 
   return (
-    <div>
-      <h1>{productId ? 'Edit Product' : 'Add Product'}</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="product-form-container">
+      <h1 className="product-form-header">{productId ? 'Edit Product' : 'Add Product'}</h1>
+      <form className="product-form" onSubmit={handleSubmit}>
         <div>
           <label>Product Name</label>
           <input

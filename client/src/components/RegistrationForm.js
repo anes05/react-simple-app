@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/RegistrationForm.css';
 
 const RegistrationForm = () => {
   const [username, setUsername] = useState('');
@@ -36,10 +37,10 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
+    <div className="registration-container">
+      <h1 className="registration-header">Register</h1>
+      {error && <p className="error-message">{error}</p>}
+      <form className="registration-form" onSubmit={handleSubmit}>
         <div>
           <label>
             Username:
@@ -84,6 +85,7 @@ const RegistrationForm = () => {
       </form>
     </div>
   );
+
 };
 
 export default RegistrationForm;

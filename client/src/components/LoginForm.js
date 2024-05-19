@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import '../styles/LoginForm.css'
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,10 +29,10 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
+    <div className="login-container">
+      <h1 className="login-header">Login</h1>
+      {error && <p className="error-message">{error}</p>}
+      <form className="login-form" onSubmit={handleSubmit}>
         <div>
           <label>
             Email:
@@ -57,6 +57,7 @@ const LoginForm = () => {
       </form>
     </div>
   );
+
 };
 
 export default LoginForm;

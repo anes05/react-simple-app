@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import '../styles/ShopForm.css';
 
 const ShopForm = () => {
   const { id } = useParams();
@@ -68,17 +69,17 @@ const ShopForm = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="loading-message">Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="error-message">Error: {error}</div>;
   }
 
   return (
-    <div>
-      <h1>{id ? 'Edit Shop' : 'Create Shop'}</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="shop-form-container">
+      <h1 className="shop-form-header">{id ? 'Edit Shop' : 'Create Shop'}</h1>
+      <form className="shop-form" onSubmit={handleSubmit}>
         <div>
           <label>
             Shop Name:
@@ -127,6 +128,7 @@ const ShopForm = () => {
       </form>
     </div>
   );
+
 };
 
 export default ShopForm;
